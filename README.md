@@ -1,4 +1,4 @@
-# pyannote-devinet-model
+# pyannote-extension-template
 
 This is a template for any external class that would be needed at any step of the
 pyannote pipeline. The classes that are defined in your extension can be then 
@@ -31,7 +31,7 @@ pipeline_step_name:
   params:
     param_1 : 1
     param_2 : some other string value
-    param_3 : 5477
+    param_3 : 4577
     
 ```
 
