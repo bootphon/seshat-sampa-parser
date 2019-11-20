@@ -16,7 +16,7 @@ setup(
     name='seshat.parser.pckgname',
     namespace_packages=['seshat'],
     packages=find_packages(),
-    install_requires=["seshat",
+    install_requires=["seshat-server",
                       # add any other dependencies here
                       ],
 
