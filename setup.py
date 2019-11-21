@@ -13,21 +13,20 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='seshat.parser.pckgname',
+    name='seshat-sampa-parser',
     namespace_packages=['seshat'],
     packages=find_packages(),
     install_requires=["seshat-server",
-                      # add any other dependencies here
-                      ],
+                      "voxpopuli"],
 
     version="0.1",
 
-    description='Here be your parser module description',
+    description='Parser to check if some phonemic form is a valid SAMPA string',
     long_description=long_description,
     long_description_content_type='text/markdown',
 
-    author='King Ju (ASFH)',
-    author_email='kingju@asfh.fr',
+    author='Hadrien Titeux',
+    author_email='hadrien.titeux@ens.fr',
     url='https://github.com/github/seshat-parser-template',
 
     classifiers=[
