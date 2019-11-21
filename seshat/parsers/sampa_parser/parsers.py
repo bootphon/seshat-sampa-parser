@@ -19,9 +19,9 @@ class BaseSampaParser(BaseCustomParser, metaclass=ABCMeta):
         self.pho_len = OrderedDict(
             sorted(pho_len.items(), key=lambda x: x[0], reverse=True))
 
-    @property
-    def name(self):
-        return self.NAME % self.LANGUAGE
+    @classmethod
+    def get_name(cls):
+        return cls.NAME % cls.LANGUAGE
 
     def check_annotation(self, annot: str) -> None:
         """Parses the phonemes in a string to a list of phoneme, raises

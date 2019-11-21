@@ -7,7 +7,7 @@
 # Hadrien Titeux
 
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, find_namespace_packages
 
 with open('README.md') as f:
     long_description = f.read()
@@ -15,7 +15,7 @@ with open('README.md') as f:
 setup(
     name='seshat-sampa-parser',
     namespace_packages=['seshat'],
-    packages=find_packages(),
+    packages=["seshat.parsers.sampa_parser"],
     install_requires=["seshat-server",
                       "voxpopuli"],
 
