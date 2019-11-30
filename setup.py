@@ -7,21 +7,20 @@
 # Hadrien Titeux
 
 
-from setuptools import setup, find_packages, find_namespace_packages
+from setuptools import setup, find_packages
 
 with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='seshat-sampa-parser',
-    namespace_packages=['seshat'],
-    packages=["seshat.parsers.sampa_parser"],
+    name='seshat-parser-sampa',
+    packages=find_packages(),
     install_requires=["seshat-server",
                       "voxpopuli"],
 
     version="0.1",
 
-    description='Parser to check if some phonemic form is a valid SAMPA string',
+    description='Parsers to check if some phonemic form is a valid SAMPA string',
     long_description=long_description,
     long_description_content_type='text/markdown',
 
