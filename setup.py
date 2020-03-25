@@ -18,7 +18,7 @@ setup(
     install_requires=["seshat-server",
                       "voxpopuli"],
 
-    version="0.1",
+    version="0.2",
 
     description='Parsers to check if some phonemic form is a valid SAMPA string',
     long_description=long_description,

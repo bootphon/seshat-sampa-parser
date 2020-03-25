@@ -2,18 +2,18 @@ from abc import ABCMeta
 from collections import OrderedDict, defaultdict
 
 from seshat.parsers.base import BaseCustomParser, AnnotationError
-from voxpopuli import Voice
+from voxpopuli.phonemes import AbstractPhonemeGroup, FrenchPhonemes, BritishEnglishPhonemes, SpanishPhonemes
 
 
 class BaseSampaParser(BaseCustomParser, metaclass=ABCMeta):
     """A parser that checks if a phoneme """
     NAME = "Sampa Parser (%s)"  # this name should be unique, and will be displayed in Seshat's interface
     LANGUAGE = None
+    PHONEMES: AbstractPhonemeGroup = None
 
     def __init__(self):
-        phonemizer = Voice(lang="en")
         pho_len = defaultdict(set)
-        for pho in phonemizer.phonemes._all:
+        for pho in self.PHONEMES._all:
             pho_len[len(pho)].add(pho)
         # ordering dict by descending length
         self.pho_len = OrderedDict(
@@ -45,11 +45,14 @@ class BaseSampaParser(BaseCustomParser, metaclass=ABCMeta):
 
 class FrenchSampaParser(BaseSampaParser):
     LANGUAGE = "fr"
+    PHONEMES = FrenchPhonemes
 
 
 class SpanishSampaParser(BaseSampaParser):
     LANGUAGE = "es"
+    PHONEMES = SpanishPhonemes
 
 
 class EnglishSampaParser(BaseSampaParser):
     LANGUAGE = "en"
+    PHONEMES = BritishEnglishPhonemes
